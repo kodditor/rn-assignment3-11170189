@@ -1,67 +1,67 @@
 export const categories = {
     '001': {
         title: 'Study',
-        image: 'assets/images/study.png',
+        image: require('./assets/images/study.png'),
         color: '#FF5733',
         accentColor: '#FFC2B3'
     },
     '002': {
         title: 'Cook',
-        image: 'assets/images/cook.png',
+        image: require('./assets/images/cook.png'),
         color: '#33B5FF',
         accentColor: '#B3E5FF'
     },
     '003': {
         title: 'Code',
-        image: 'assets/images/code.png',
+        image: require('./assets/images/coding.png'),
         color: '#8D33FF',
         accentColor: '#D3B3FF'
     },
     '004': {
         title: 'Exercise',
-        image: 'assets/images/exercise.png',
+        image: require('./assets/images/exercise.png'),
         color: '#FF33A6',
         accentColor: '#FFB3D9'
     },
     '005': {
         title: 'Socialize',
-        image: 'assets/images/socialize.png',
+        image: require('./assets/images/socialize.png'),
         color: '#33FF57',
         accentColor: '#B3FFBF'
     },
     '006': {
         title: 'Lectures',
-        image: 'assets/images/lectures.png',
+        image: require('./assets/images/lectures.png'),
         color: '#FFC733',
         accentColor: '#FFF0B3'
     },
     '007': {
         title: 'Appointments',
-        image: 'assets/images/appointments.png',
+        image: require('./assets/images/appointments.png'),
         color: '#336EFF',
         accentColor: '#B3CCFF'
     },
     '008': {
         title: 'Volunteering',
-        image: 'assets/images/volunteering.png',
+        image: require('./assets/images/volunteering.png'),
         color: '#33FFE0',
         accentColor: '#B3FFF4'
     },
     '009': {
         title: 'Cleaning/Laundry',
-        image: 'assets/images/cleaning.png',
+        image: require('./assets/images/cleaning.png'),
         color: '#FF9133',
         accentColor: '#FFD1B3'
     },
     '010': {
         title: 'Internship',
-        image: 'assets/images/work.png',
+        image: require('./assets/images/work.png'),
         color: '#A6A6A6',
         accentColor: '#E0E0E0'
     },   
 }
 
-const tasks = [
+export const tasks = [
     {
         category: '003',
         title: 'DCIT 202 Assignment',

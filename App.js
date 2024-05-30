@@ -1,29 +1,54 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-
+import { Image, StyleSheet, Text, View, StatusBar, FlatList } from 'react-native';
+import { tasks } from './constants'
+import { SearchInput } from './components/search-input.component';
+import { CategoryComponent } from './components/category-card.component';
 
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
+    <View style={styles.container}>
+      <View style={styles.headerContainer}>
         <View>
-          <Text>Hello, Devs</Text>
-          <Text></Text>
+          <Text style={styles.title}>Hello, Devs</Text>
+          <Text>{tasks.length} Tasks today</Text>
         </View>
+        <View>
+            <Image 
+              source={require('./assets/images/user.png')}
+              style={{  width: 50, height: 50 }}  
+              />
+        </View>
+      </View> 
+      <SearchInput />
+      <CategoryComponent />
+      <View>
+        <Text>Ongoing Tasks</Text>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    display: flex,
+    backgroundColor: '#F9ECEE',
+    height: '100%',
+    maxHeight: `calc(100%-${StatusBar.currentHeight})`,
+    display: 'flex',
     flexDirection: 'column',
-    gap: '1.5rem',
+    marginTop: StatusBar.currentHeight,
+    padding: 20,
   },
   title: {
-    fontSize: '25px',
-    fontWeight: '700'
-  }
+    fontSize: 40,
+    fontWeight: '700',
+  },
+  headerContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: 1,
+    marginBottom: 20
+  },
 });
