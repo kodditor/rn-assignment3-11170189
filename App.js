@@ -1,12 +1,13 @@
-import { Image, StyleSheet, Text, View, StatusBar, FlatList } from 'react-native';
-import { tasks } from './constants'
+import { Image, StyleSheet, Text, View, StatusBar, FlatList, ScrollView } from 'react-native';
+import { tasks, categories } from './constants'
 import { SearchInput } from './components/search-input.component';
 import { CategoryComponent } from './components/category-card.component';
+import TasksComponent from './components/tasks.component';
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.headerContainer}>
         <View>
           <Text style={styles.title}>Hello, Devs</Text>
@@ -20,11 +21,9 @@ export default function App() {
         </View>
       </View> 
       <SearchInput />
-      <CategoryComponent />
-      <View>
-        <Text>Ongoing Tasks</Text>
-      </View>
-    </View>
+      <CategoryComponent categories={categories}  tasks={tasks}/>
+      <TasksComponent categories={categories}  tasks={tasks}/>
+    </ScrollView>
   );
 }
 
