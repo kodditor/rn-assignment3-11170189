@@ -1,11 +1,10 @@
 import { StyleSheet, View, Text, Image, FlatList } from "react-native"
-import { categories, tasks } from "../constants"
 
-export function CategoryComponent(){
+export function CategoryComponent({ categories, tasks }){
 
     return(
-        <View>
-        <Text style={styles.sectionTitle}>Categories</Text>
+        <View style={styles.container}>
+            <Text style={styles.sectionTitle}>Categories</Text>
             <FlatList
                 data={Object.values(categories)}
                 keyExtractor={ item => item.accentColor}
@@ -36,6 +35,9 @@ export function CategoryComponent(){
 }
 
 const styles = StyleSheet.create({
+    container: {
+        marginBottom: 20,
+    },
     card: {
         padding: 15,
         backgroundColor: 'white',
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 22,
         fontWeight: '600',
-        marginBottom: 10,
+        marginBottom: 15,
     },
     categoryTitle: {
         fontSize: 21,
